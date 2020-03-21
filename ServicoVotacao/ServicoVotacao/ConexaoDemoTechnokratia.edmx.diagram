@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="94ece911b2e94de5b775cdaae6391014" Name="Diagram1">
+        <EntityTypeShape EntityType="DemoTechnokratiaModelo.Artigo" Width="1.5" PointX="5.25" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DemoTechnokratiaModelo.Pessoa" Width="1.5" PointX="0.75" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DemoTechnokratiaModelo.Projeto" Width="1.5" PointX="3" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="DemoTechnokratiaModelo.Voto" Width="1.5" PointX="7.5" PointY="5.25" IsExpanded="true" />
+        <AssociationConnector Association="DemoTechnokratiaModelo.FK_ARTIGO_PESSOA" ManuallyRouted="false" />
+        <AssociationConnector Association="DemoTechnokratiaModelo.FK_ARTIGO_VOTO" ManuallyRouted="false" />
+        <AssociationConnector Association="DemoTechnokratiaModelo.FK_PROJETOLEI_ARTIGO" ManuallyRouted="false" />
+        <AssociationConnector Association="DemoTechnokratiaModelo.FK_PESSOA_PROJETOLEI" ManuallyRouted="false" />
+        <AssociationConnector Association="DemoTechnokratiaModelo.FK_VOTO_PESSOA" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

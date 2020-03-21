@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:55332/InterfaceVotacao.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/ServicoVotacao.TO" />
+  <xs:element name="ConsultarVoto">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/ServicoVotacao.TO" minOccurs="0" name="p_VotoTO" nillable="true" type="q1:VotoTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarVotoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/ServicoVotacao.TO" minOccurs="0" name="ConsultarVotoResult" nillable="true" type="q2:VotoTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EfetuarVotacao">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/ServicoVotacao.TO" minOccurs="0" name="p_voto" nillable="true" type="q3:VotoTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EfetuarVotacaoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/ServicoVotacao.TO" minOccurs="0" name="EfetuarVotacaoResult" nillable="true" type="q4:RetornoServicoTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IncluirVoto">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/ServicoVotacao.TO" minOccurs="0" name="p_VotoTO" nillable="true" type="q5:VotoTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IncluirVotoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/ServicoVotacao.TO" minOccurs="0" name="IncluirVotoResult" nillable="true" type="q6:RetornoServicoTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AtualizarVoto">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/ServicoVotacao.TO" minOccurs="0" name="p_VotoTO" nillable="true" type="q7:VotoTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AtualizarVotoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/ServicoVotacao.TO" minOccurs="0" name="AtualizarVotoResult" nillable="true" type="q8:RetornoServicoTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ContarVotosPorArtigo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="p_idArtigo" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ContarVotosPorArtigoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/ServicoVotacao.TO" minOccurs="0" name="ContarVotosPorArtigoResult" nillable="true" type="q9:ContagemVotosTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ContarVotosPorProjeto">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="p_IdProjeto" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ContarVotosPorProjetoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/ServicoVotacao.TO" minOccurs="0" name="ContarVotosPorProjetoResult" nillable="true" type="q10:ContagemVotosTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ContarVotosPorAutor">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="p_IdPessoa" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ContarVotosPorAutorResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/ServicoVotacao.TO" minOccurs="0" name="ContarVotosPorAutorResult" nillable="true" type="q11:ContagemVotosTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObterAprovacaoPopularAutorProjetos">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IdPessoa" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObterAprovacaoPopularAutorProjetosResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/ServicoVotacao.TO" minOccurs="0" name="ObterAprovacaoPopularAutorProjetosResult" nillable="true" type="q12:ContagemVotosTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AtualizarProjetoComAprovacao">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="p_idprojeto" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AtualizarProjetoComAprovacaoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/ServicoVotacao.TO" minOccurs="0" name="AtualizarProjetoComAprovacaoResult" nillable="true" type="q13:RetornoServicoTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

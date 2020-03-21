@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "testeanexararquivoprojeto", "testeanexararquivoprojeto\testeanexararquivoprojeto.csproj", "{ECA5211A-8294-481E-919A-A15AD0E200AF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ECA5211A-8294-481E-919A-A15AD0E200AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ECA5211A-8294-481E-919A-A15AD0E200AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ECA5211A-8294-481E-919A-A15AD0E200AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ECA5211A-8294-481E-919A-A15AD0E200AF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

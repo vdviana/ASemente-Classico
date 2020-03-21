@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DemoTechnokratiaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="COMENTARIO">
+    <Key>
+      <PropertyRef Name="ID_COMENTARIO" />
+    </Key>
+    <Property Name="ID_COMENTARIO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_ARTIGO" Type="int" Nullable="false" />
+    <Property Name="ID_PESSOA" Type="int" Nullable="false" />
+    <Property Name="DESCRICAO" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="ORDEM" Type="int" Nullable="false" />
+    <Property Name="IDCOMENTARIOPAI" Type="int" />
+  </EntityType>
+  <EntityType Name="REFERENCIA">
+    <Key>
+      <PropertyRef Name="ID_REFERENCIA" />
+    </Key>
+    <Property Name="ID_REFERENCIA" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_COMENTARIO" Type="int" Nullable="false" />
+    <Property Name="LINK_REFERENCIA" Type="varchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_COMENTARIO_REFERENCIA">
+    <End Role="COMENTARIO" Type="Self.COMENTARIO" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="REFERENCIA" Type="Self.REFERENCIA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="COMENTARIO">
+        <PropertyRef Name="ID_COMENTARIO" />
+      </Principal>
+      <Dependent Role="REFERENCIA">
+        <PropertyRef Name="ID_COMENTARIO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="DemoTechnokratiaModelStoreContainer">
+    <EntitySet Name="COMENTARIO" EntityType="Self.COMENTARIO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="REFERENCIA" EntityType="Self.REFERENCIA" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_COMENTARIO_REFERENCIA" Association="Self.FK_COMENTARIO_REFERENCIA">
+      <End Role="COMENTARIO" EntitySet="COMENTARIO" />
+      <End Role="REFERENCIA" EntitySet="REFERENCIA" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

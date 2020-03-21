@@ -1,0 +1,5 @@
+c:\users\vinicius\documents\visual studio 2015\Projects\demotechnokratia\testeanexararquivoprojeto\testeanexararquivoprojeto\bin\Debug\testeanexararquivoprojeto.exe.config
+c:\users\vinicius\documents\visual studio 2015\Projects\demotechnokratia\testeanexararquivoprojeto\testeanexararquivoprojeto\bin\Debug\testeanexararquivoprojeto.exe
+c:\users\vinicius\documents\visual studio 2015\Projects\demotechnokratia\testeanexararquivoprojeto\testeanexararquivoprojeto\bin\Debug\testeanexararquivoprojeto.pdb
+c:\users\vinicius\documents\visual studio 2015\Projects\demotechnokratia\testeanexararquivoprojeto\testeanexararquivoprojeto\obj\Debug\testeanexararquivoprojeto.exe
+c:\users\vinicius\documents\visual studio 2015\Projects\demotechnokratia\testeanexararquivoprojeto\testeanexararquivoprojeto\obj\Debug\testeanexararquivoprojeto.pdb

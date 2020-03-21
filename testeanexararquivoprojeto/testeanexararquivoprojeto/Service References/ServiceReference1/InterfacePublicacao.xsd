@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="SituacaoProjeto">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="CADASTRADO" />
+      <xs:enumeration value="VALIDADO" />
+      <xs:enumeration value="ATIVO" />
+      <xs:enumeration value="INATIVO" />
+      <xs:enumeration value="DOCUMENTADO" />
+      <xs:enumeration value="REGISTRADO" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="SituacaoProjeto" nillable="true" type="tns:SituacaoProjeto" />
+</xs:schema>

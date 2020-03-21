@@ -1,0 +1,9 @@
+C:\Users\Vinicius\Documents\Visual Studio 2015\Projects\demotechnokratia\ServicoVotacao\ServicoVotacao\obj\Debug\ServicoVotacao.csprojResolveAssemblyReference.cache
+C:\Users\Vinicius\Documents\Visual Studio 2015\Projects\demotechnokratia\ServicoVotacao\ServicoVotacao\bin\ServicoVotacao.dll.config
+C:\Users\Vinicius\Documents\Visual Studio 2015\Projects\demotechnokratia\ServicoVotacao\ServicoVotacao\bin\ServicoVotacao.dll
+C:\Users\Vinicius\Documents\Visual Studio 2015\Projects\demotechnokratia\ServicoVotacao\ServicoVotacao\bin\ServicoVotacao.pdb
+C:\Users\Vinicius\Documents\Visual Studio 2015\Projects\demotechnokratia\ServicoVotacao\ServicoVotacao\bin\DateEncription.dll
+C:\Users\Vinicius\Documents\Visual Studio 2015\Projects\demotechnokratia\ServicoVotacao\ServicoVotacao\bin\EntityFramework.dll
+C:\Users\Vinicius\Documents\Visual Studio 2015\Projects\demotechnokratia\ServicoVotacao\ServicoVotacao\bin\EntityFramework.xml
+C:\Users\Vinicius\Documents\Visual Studio 2015\Projects\demotechnokratia\ServicoVotacao\ServicoVotacao\obj\Debug\ServicoVotacao.dll
+C:\Users\Vinicius\Documents\Visual Studio 2015\Projects\demotechnokratia\ServicoVotacao\ServicoVotacao\obj\Debug\ServicoVotacao.pdb

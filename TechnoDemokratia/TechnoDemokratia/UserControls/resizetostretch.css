@@ -1,0 +1,26 @@
+﻿body {}
+    .resizeimage {
+        background-size: 100% 100%;
+        -webkit-background-size: 100% 100%;
+        -o-background-size: 100% 100%;
+        -khtml-background-size: 100% 100%;
+        -moz-background-size: 100% 100%;
+    }
+
+    .inputfile {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+.btnfupload {
+   
+    background-color: lightblue;
+    border-radius: unset;
+    width: 90%;
+    font-size: small;
+}
+  

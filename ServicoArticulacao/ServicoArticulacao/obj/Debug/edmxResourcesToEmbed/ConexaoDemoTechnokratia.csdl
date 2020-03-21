@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DemoTechnokratiaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Comentario">
+    <Key>
+      <PropertyRef Name="IdComentario" />
+    </Key>
+    <Property Name="IdComentario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdArtigo" Type="Int32" Nullable="false" />
+    <Property Name="IdPessoa" Type="Int32" Nullable="false" />
+    <Property Name="Descricao" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Ordem" Type="Int32" Nullable="false" />
+    <Property Name="IdComentarioPai" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Referencia">
+    <Key>
+      <PropertyRef Name="IdReferencia" />
+    </Key>
+    <Property Name="IdReferencia" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdComentario" Type="Int32" Nullable="false" />
+    <Property Name="LinkReferencia" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_COMENTARIO_REFERENCIA">
+    <End Role="COMENTARIO" Type="DemoTechnokratiaModel.Comentario" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="REFERENCIA" Type="DemoTechnokratiaModel.Referencia" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="COMENTARIO">
+        <PropertyRef Name="IdComentario" />
+      </Principal>
+      <Dependent Role="REFERENCIA">
+        <PropertyRef Name="IdComentario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ConexaoDemoTechnokratia" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Comentario" EntityType="DemoTechnokratiaModel.Comentario" />
+    <EntitySet Name="Referencia" EntityType="DemoTechnokratiaModel.Referencia" />
+    <AssociationSet Name="FK_COMENTARIO_REFERENCIA" Association="Self.FK_COMENTARIO_REFERENCIA">
+      <End Role="COMENTARIO" EntitySet="Comentario" />
+      <End Role="REFERENCIA" EntitySet="Referencia" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

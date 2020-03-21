@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://authsvctheseed.azurewebsites.net/InterfaceAutenticacao.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/ServicoAutenticacao.TO" />
+  <xs:import schemaLocation="https://authsvctheseed.azurewebsites.net/InterfaceAutenticacao.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Utils.Mail" />
+  <xs:element name="Autenticar">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="userString" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AutenticarResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/ServicoAutenticacao.TO" minOccurs="0" name="AutenticarResult" nillable="true" type="q1:PessoaTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AutenticarRedeSocial">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="RedeSocial" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AutenticarRedeSocialResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/ServicoAutenticacao.TO" minOccurs="0" name="AutenticarRedeSocialResult" nillable="true" type="q2:PessoaTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CadastrarSenhaCriptografadaRedeSocial">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IdRedeSocial" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="RedeSocial" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="datacadastro" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CadastrarSenhaCriptografadaRedeSocialResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/ServicoAutenticacao.TO" minOccurs="0" name="CadastrarSenhaCriptografadaRedeSocialResult" nillable="true" type="q3:RetornoServicoTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IncluirNovoPessoa">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/ServicoAutenticacao.TO" minOccurs="0" name="PessoaTO" nillable="true" type="q4:PessoaTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IncluirNovoPessoaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/ServicoAutenticacao.TO" minOccurs="0" name="IncluirNovoPessoaResult" nillable="true" type="q5:RetornoServicoTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EnviarEmailAutenticacao">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Utils.Mail" minOccurs="0" name="tpEmail" type="q6:Mail.TipoEmail" />
+        <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Body" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="linktramitacao" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EnviarEmailAutenticacaoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/ServicoAutenticacao.TO" minOccurs="0" name="EnviarEmailAutenticacaoResult" nillable="true" type="q7:RetornoServicoTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AlterarSenha">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/ServicoAutenticacao.TO" minOccurs="0" name="p_pessoa" nillable="true" type="q8:PessoaTO" />
+        <xs:element minOccurs="0" name="senhaAntiga" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="novaSenha" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AlterarSenhaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/ServicoAutenticacao.TO" minOccurs="0" name="AlterarSenhaResult" nillable="true" type="q9:RetornoServicoTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AlterarSituacaoPessoa">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/ServicoAutenticacao.TO" minOccurs="0" name="p_pessoa" nillable="true" type="q10:PessoaTO" />
+        <xs:element minOccurs="0" name="p_situacao" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AlterarSituacaoPessoaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/ServicoAutenticacao.TO" minOccurs="0" name="AlterarSituacaoPessoaResult" nillable="true" type="q11:RetornoServicoTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarPerfil">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/ServicoAutenticacao.TO" minOccurs="0" name="p_pessoa" nillable="true" type="q12:PessoaTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarPerfilResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/ServicoAutenticacao.TO" minOccurs="0" name="ConsultarPerfilResult" nillable="true" type="q13:PessoaTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BuscarPessoa">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="p_infoParcial" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="p_index" type="xs:int" />
+        <xs:element minOccurs="0" name="p_range" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BuscarPessoaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/ServicoAutenticacao.TO" minOccurs="0" name="BuscarPessoaResult" nillable="true" type="q14:ListaPessoasTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AtivarUsuario">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="codigoAtivacao" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="dataCadastro" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AtivarUsuarioResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AtivarUsuarioResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

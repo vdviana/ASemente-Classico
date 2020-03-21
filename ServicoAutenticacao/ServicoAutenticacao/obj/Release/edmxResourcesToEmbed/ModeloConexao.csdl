@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DemoTechnokratiaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="ConexaoDemoTechnokratia" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Pessoa" EntityType="DemoTechnokratiaModel.Pessoa" />
+  </EntityContainer>
+  <EntityType Name="Pessoa">
+    <Key>
+      <PropertyRef Name="IdPessoa" />
+    </Key>
+    <Property Name="IdPessoa" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Email" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Senha" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DataCadastro" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CPF" Type="Int64" />
+    <Property Name="Nome" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Situacao" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ImagemPerfil" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="FacebookID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LinkedInID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TwitterID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Google_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="InstagramID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Ativacao" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+  </EntityType>
+</Schema>

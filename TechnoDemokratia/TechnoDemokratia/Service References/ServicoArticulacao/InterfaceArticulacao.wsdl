@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="InterfaceArticulacao" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:59582/InterfaceArticulacao.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:59582/InterfaceArticulacao.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:59582/InterfaceArticulacao.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/ServicoArticulacao.TO" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IInterfaceArticulacao_Comentar_InputMessage">
+    <wsdl:part name="parameters" element="tns:Comentar" />
+  </wsdl:message>
+  <wsdl:message name="IInterfaceArticulacao_Comentar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ComentarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInterfaceArticulacao_EditarComentario_InputMessage">
+    <wsdl:part name="parameters" element="tns:EditarComentario" />
+  </wsdl:message>
+  <wsdl:message name="IInterfaceArticulacao_EditarComentario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EditarComentarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInterfaceArticulacao_RemoverComentario_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoverComentario" />
+  </wsdl:message>
+  <wsdl:message name="IInterfaceArticulacao_RemoverComentario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoverComentarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInterfaceArticulacao_RemoverReferencia_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoverReferencia" />
+  </wsdl:message>
+  <wsdl:message name="IInterfaceArticulacao_RemoverReferencia_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoverReferenciaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInterfaceArticulacao_IncluirReferencia_InputMessage">
+    <wsdl:part name="parameters" element="tns:IncluirReferencia" />
+  </wsdl:message>
+  <wsdl:message name="IInterfaceArticulacao_IncluirReferencia_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IncluirReferenciaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInterfaceArticulacao_ConsultarComentario_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarComentario" />
+  </wsdl:message>
+  <wsdl:message name="IInterfaceArticulacao_ConsultarComentario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarComentarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInterfaceArticulacao_ListarReferencias_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListarReferencias" />
+  </wsdl:message>
+  <wsdl:message name="IInterfaceArticulacao_ListarReferencias_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListarReferenciasResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IInterfaceArticulacao">
+    <wsdl:operation name="Comentar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInterfaceArticulacao/Comentar" message="tns:IInterfaceArticulacao_Comentar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInterfaceArticulacao/ComentarResponse" message="tns:IInterfaceArticulacao_Comentar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EditarComentario">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInterfaceArticulacao/EditarComentario" message="tns:IInterfaceArticulacao_EditarComentario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInterfaceArticulacao/EditarComentarioResponse" message="tns:IInterfaceArticulacao_EditarComentario_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoverComentario">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInterfaceArticulacao/RemoverComentario" message="tns:IInterfaceArticulacao_RemoverComentario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInterfaceArticulacao/RemoverComentarioResponse" message="tns:IInterfaceArticulacao_RemoverComentario_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoverReferencia">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInterfaceArticulacao/RemoverReferencia" message="tns:IInterfaceArticulacao_RemoverReferencia_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInterfaceArticulacao/RemoverReferenciaResponse" message="tns:IInterfaceArticulacao_RemoverReferencia_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IncluirReferencia">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInterfaceArticulacao/IncluirReferencia" message="tns:IInterfaceArticulacao_IncluirReferencia_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInterfaceArticulacao/IncluirReferenciaResponse" message="tns:IInterfaceArticulacao_IncluirReferencia_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarComentario">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInterfaceArticulacao/ConsultarComentario" message="tns:IInterfaceArticulacao_ConsultarComentario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInterfaceArticulacao/ConsultarComentarioResponse" message="tns:IInterfaceArticulacao_ConsultarComentario_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarReferencias">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInterfaceArticulacao/ListarReferencias" message="tns:IInterfaceArticulacao_ListarReferencias_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInterfaceArticulacao/ListarReferenciasResponse" message="tns:IInterfaceArticulacao_ListarReferencias_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IInterfaceArticulacao" type="tns:IInterfaceArticulacao">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Comentar">
+      <soap:operation soapAction="http://tempuri.org/IInterfaceArticulacao/Comentar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditarComentario">
+      <soap:operation soapAction="http://tempuri.org/IInterfaceArticulacao/EditarComentario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoverComentario">
+      <soap:operation soapAction="http://tempuri.org/IInterfaceArticulacao/RemoverComentario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoverReferencia">
+      <soap:operation soapAction="http://tempuri.org/IInterfaceArticulacao/RemoverReferencia" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IncluirReferencia">
+      <soap:operation soapAction="http://tempuri.org/IInterfaceArticulacao/IncluirReferencia" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarComentario">
+      <soap:operation soapAction="http://tempuri.org/IInterfaceArticulacao/ConsultarComentario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarReferencias">
+      <soap:operation soapAction="http://tempuri.org/IInterfaceArticulacao/ListarReferencias" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="InterfaceArticulacao">
+    <wsdl:port name="BasicHttpBinding_IInterfaceArticulacao" binding="tns:BasicHttpBinding_IInterfaceArticulacao">
+      <soap:address location="http://localhost:59582/InterfaceArticulacao.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

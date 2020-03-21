@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TechnoDemokratiaModelo.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="ARTIGO">
+    <Key>
+      <PropertyRef Name="ID_ARTIGO" />
+    </Key>
+    <Property Name="ID_ARTIGO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_PROJETO" Type="int" Nullable="false" />
+    <Property Name="ID_PESSOA" Type="int" Nullable="false" />
+    <Property Name="DESCRICAO" Type="varchar(max)" />
+    <Property Name="ORDEM" Type="int" Nullable="false" />
+    <Property Name="ISSUGESTAO" Type="bit" Nullable="false" />
+    <Property Name="CAPITULO" Type="varchar" MaxLength="200" />
+    <Property Name="DATAMOVIMENTO" Type="datetime" />
+    <Property Name="ID_ARTIGO_SUBSTITUTIVO" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'TechnoDemokratia.dbo.POSICAO_POLITICA' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="POSICAO_POLITICA">
+    <Key>
+      <PropertyRef Name="ID_POSICAO" />
+      <PropertyRef Name="DESC_POSICAO" />
+    </Key>
+    <Property Name="ID_POSICAO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DESC_POSICAO" Type="varchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PROJETOLEI">
+    <Key>
+      <PropertyRef Name="ID_PROJETO" />
+    </Key>
+    <Property Name="ID_PROJETO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DESCRICAO" Type="varchar(max)" />
+    <Property Name="ID_PESSOA" Type="int" Nullable="false" />
+    <Property Name="PORCENTAGEM_APROVADO" Type="int" />
+    <Property Name="PORCENTAGEM_REPROVADO" Type="int" />
+    <Property Name="SITUACAO" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="INDICE_APROVACAO" Type="int" Nullable="false" />
+    <Property Name="POSICAO_POLITICA" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="EPIGRAFE" Type="varchar(max)" />
+    <Property Name="EMENTA" Type="varchar(max)" />
+    <Property Name="FECHO" Type="varchar(max)" />
+    <Property Name="JUSTIFICATIVA" Type="varchar(max)" />
+    <Property Name="PREAMBULO" Type="varchar" MaxLength="200" />
+    <Property Name="DATACADASTRO" Type="datetime" />
+    <Property Name="TITULO" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="VISIBILIDADE" Type="bit" />
+    <Property Name="CAMINHOIMAGEM" Type="varchar(max)" />
+    <Property Name="TIPOPROJETO" Type="varchar" MaxLength="4" Nullable="false" />
+    <Property Name="NUMERACAO" Type="int" />
+    <Property Name="ANO" Type="int" />
+    <Property Name="CAMINHOARQUIVO" Type="varchar" MaxLength="300" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'TechnoDemokratia.dbo.TIPOPROJETO' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="TIPOPROJETO">
+    <Key>
+      <PropertyRef Name="ID_TIPO" />
+      <PropertyRef Name="ABREV" />
+      <PropertyRef Name="DESCRICAO" />
+    </Key>
+    <Property Name="ID_TIPO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ABREV" Type="varchar" MaxLength="4" Nullable="false" />
+    <Property Name="DESCRICAO" Type="varchar" MaxLength="200" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_PROJETOLEI_ARTIGO">
+    <End Role="PROJETOLEI" Type="Self.PROJETOLEI" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="ARTIGO" Type="Self.ARTIGO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PROJETOLEI">
+        <PropertyRef Name="ID_PROJETO" />
+      </Principal>
+      <Dependent Role="ARTIGO">
+        <PropertyRef Name="ID_PROJETO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="TechnoDemokratiaModeloStoreContainer">
+    <EntitySet Name="ARTIGO" EntityType="Self.ARTIGO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PROJETOLEI" EntityType="Self.PROJETOLEI" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="POSICAO_POLITICA" EntityType="Self.POSICAO_POLITICA" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[POSICAO_POLITICA].[ID_POSICAO] AS [ID_POSICAO], 
+[POSICAO_POLITICA].[DESC_POSICAO] AS [DESC_POSICAO]
+FROM [dbo].[POSICAO_POLITICA] AS [POSICAO_POLITICA]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="TIPOPROJETO" EntityType="Self.TIPOPROJETO" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[TIPOPROJETO].[ID_TIPO] AS [ID_TIPO], 
+[TIPOPROJETO].[ABREV] AS [ABREV], 
+[TIPOPROJETO].[DESCRICAO] AS [DESCRICAO]
+FROM [dbo].[TIPOPROJETO] AS [TIPOPROJETO]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_PROJETOLEI_ARTIGO" Association="Self.FK_PROJETOLEI_ARTIGO">
+      <End Role="PROJETOLEI" EntitySet="PROJETOLEI" />
+      <End Role="ARTIGO" EntitySet="ARTIGO" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

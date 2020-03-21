@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DemoTechnokratiaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="PESSOA">
+    <Key>
+      <PropertyRef Name="ID_PESSOA" />
+    </Key>
+    <Property Name="ID_PESSOA" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EMAIL" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="SENHA" Type="varchar" MaxLength="50" />
+    <Property Name="DATA_CADASTRO" Type="datetime" Nullable="false" />
+    <Property Name="CPF" Type="bigint" />
+    <Property Name="NOME" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="SITUACAO" Type="varchar" MaxLength="100" />
+    <Property Name="IMAGEMPERFIL" Type="varchar" MaxLength="500" />
+    <Property Name="FacebookID" Type="varchar" MaxLength="50" />
+    <Property Name="LinkedInID" Type="varchar" MaxLength="50" />
+    <Property Name="TwitterID" Type="varchar" MaxLength="50" />
+    <Property Name="Google+ID" Type="varchar" MaxLength="50" />
+    <Property Name="InstagramID" Type="varchar" MaxLength="50" />
+    <Property Name="ATIVACAO" Type="varchar" MaxLength="500" />
+  </EntityType>
+  <EntityContainer Name="DemoTechnokratiaModelStoreContainer">
+    <EntitySet Name="PESSOA" EntityType="Self.PESSOA" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

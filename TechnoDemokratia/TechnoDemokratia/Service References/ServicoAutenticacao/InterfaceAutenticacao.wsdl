@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="InterfaceAutenticacao" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="BasicHttpsBinding_IInterfaceAutenticacao_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken RequireClientCertificate="false" />
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="https://authsvctheseed.azurewebsites.net/InterfaceAutenticacao.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="https://authsvctheseed.azurewebsites.net/InterfaceAutenticacao.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="https://authsvctheseed.azurewebsites.net/InterfaceAutenticacao.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/ServicoAutenticacao.TO" />
+      <xsd:import schemaLocation="https://authsvctheseed.azurewebsites.net/InterfaceAutenticacao.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Utils.Mail" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IInterfaceAutenticacao_Autenticar_InputMessage">
+    <wsdl:part name="parameters" element="tns:Autenticar" />
+  </wsdl:message>
+  <wsdl:message name="IInterfaceAutenticacao_Autenticar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AutenticarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInterfaceAutenticacao_AutenticarRedeSocial_InputMessage">
+    <wsdl:part name="parameters" element="tns:AutenticarRedeSocial" />
+  </wsdl:message>
+  <wsdl:message name="IInterfaceAutenticacao_AutenticarRedeSocial_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AutenticarRedeSocialResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInterfaceAutenticacao_CadastrarSenhaCriptografadaRedeSocial_InputMessage">
+    <wsdl:part name="parameters" element="tns:CadastrarSenhaCriptografadaRedeSocial" />
+  </wsdl:message>
+  <wsdl:message name="IInterfaceAutenticacao_CadastrarSenhaCriptografadaRedeSocial_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CadastrarSenhaCriptografadaRedeSocialResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInterfaceAutenticacao_IncluirNovoPessoa_InputMessage">
+    <wsdl:part name="parameters" element="tns:IncluirNovoPessoa" />
+  </wsdl:message>
+  <wsdl:message name="IInterfaceAutenticacao_IncluirNovoPessoa_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IncluirNovoPessoaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInterfaceAutenticacao_EnviarEmailAutenticacao_InputMessage">
+    <wsdl:part name="parameters" element="tns:EnviarEmailAutenticacao" />
+  </wsdl:message>
+  <wsdl:message name="IInterfaceAutenticacao_EnviarEmailAutenticacao_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EnviarEmailAutenticacaoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInterfaceAutenticacao_AlterarSenha_InputMessage">
+    <wsdl:part name="parameters" element="tns:AlterarSenha" />
+  </wsdl:message>
+  <wsdl:message name="IInterfaceAutenticacao_AlterarSenha_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AlterarSenhaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInterfaceAutenticacao_AlterarSituacaoPessoa_InputMessage">
+    <wsdl:part name="parameters" element="tns:AlterarSituacaoPessoa" />
+  </wsdl:message>
+  <wsdl:message name="IInterfaceAutenticacao_AlterarSituacaoPessoa_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AlterarSituacaoPessoaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInterfaceAutenticacao_ConsultarPerfil_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarPerfil" />
+  </wsdl:message>
+  <wsdl:message name="IInterfaceAutenticacao_ConsultarPerfil_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarPerfilResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInterfaceAutenticacao_BuscarPessoa_InputMessage">
+    <wsdl:part name="parameters" element="tns:BuscarPessoa" />
+  </wsdl:message>
+  <wsdl:message name="IInterfaceAutenticacao_BuscarPessoa_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BuscarPessoaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInterfaceAutenticacao_AtivarUsuario_InputMessage">
+    <wsdl:part name="parameters" element="tns:AtivarUsuario" />
+  </wsdl:message>
+  <wsdl:message name="IInterfaceAutenticacao_AtivarUsuario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AtivarUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IInterfaceAutenticacao">
+    <wsdl:operation name="Autenticar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInterfaceAutenticacao/Autenticar" message="tns:IInterfaceAutenticacao_Autenticar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInterfaceAutenticacao/AutenticarResponse" message="tns:IInterfaceAutenticacao_Autenticar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AutenticarRedeSocial">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInterfaceAutenticacao/AutenticarRedeSocial" message="tns:IInterfaceAutenticacao_AutenticarRedeSocial_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInterfaceAutenticacao/AutenticarRedeSocialResponse" message="tns:IInterfaceAutenticacao_AutenticarRedeSocial_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CadastrarSenhaCriptografadaRedeSocial">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInterfaceAutenticacao/CadastrarSenhaCriptografadaRedeSocial" message="tns:IInterfaceAutenticacao_CadastrarSenhaCriptografadaRedeSocial_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInterfaceAutenticacao/CadastrarSenhaCriptografadaRedeSocialResponse" message="tns:IInterfaceAutenticacao_CadastrarSenhaCriptografadaRedeSocial_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IncluirNovoPessoa">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInterfaceAutenticacao/IncluirNovoPessoa" message="tns:IInterfaceAutenticacao_IncluirNovoPessoa_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInterfaceAutenticacao/IncluirNovoPessoaResponse" message="tns:IInterfaceAutenticacao_IncluirNovoPessoa_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EnviarEmailAutenticacao">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInterfaceAutenticacao/EnviarEmailAutenticacao" message="tns:IInterfaceAutenticacao_EnviarEmailAutenticacao_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInterfaceAutenticacao/EnviarEmailAutenticacaoResponse" message="tns:IInterfaceAutenticacao_EnviarEmailAutenticacao_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AlterarSenha">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInterfaceAutenticacao/AlterarSenha" message="tns:IInterfaceAutenticacao_AlterarSenha_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInterfaceAutenticacao/AlterarSenhaResponse" message="tns:IInterfaceAutenticacao_AlterarSenha_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AlterarSituacaoPessoa">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInterfaceAutenticacao/AlterarSituacaoPessoa" message="tns:IInterfaceAutenticacao_AlterarSituacaoPessoa_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInterfaceAutenticacao/AlterarSituacaoPessoaResponse" message="tns:IInterfaceAutenticacao_AlterarSituacaoPessoa_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarPerfil">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInterfaceAutenticacao/ConsultarPerfil" message="tns:IInterfaceAutenticacao_ConsultarPerfil_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInterfaceAutenticacao/ConsultarPerfilResponse" message="tns:IInterfaceAutenticacao_ConsultarPerfil_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BuscarPessoa">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInterfaceAutenticacao/BuscarPessoa" message="tns:IInterfaceAutenticacao_BuscarPessoa_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInterfaceAutenticacao/BuscarPessoaResponse" message="tns:IInterfaceAutenticacao_BuscarPessoa_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AtivarUsuario">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInterfaceAutenticacao/AtivarUsuario" message="tns:IInterfaceAutenticacao_AtivarUsuario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInterfaceAutenticacao/AtivarUsuarioResponse" message="tns:IInterfaceAutenticacao_AtivarUsuario_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IInterfaceAutenticacao" type="tns:IInterfaceAutenticacao">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Autenticar">
+      <soap:operation soapAction="http://tempuri.org/IInterfaceAutenticacao/Autenticar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AutenticarRedeSocial">
+      <soap:operation soapAction="http://tempuri.org/IInterfaceAutenticacao/AutenticarRedeSocial" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CadastrarSenhaCriptografadaRedeSocial">
+      <soap:operation soapAction="http://tempuri.org/IInterfaceAutenticacao/CadastrarSenhaCriptografadaRedeSocial" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IncluirNovoPessoa">
+      <soap:operation soapAction="http://tempuri.org/IInterfaceAutenticacao/IncluirNovoPessoa" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EnviarEmailAutenticacao">
+      <soap:operation soapAction="http://tempuri.org/IInterfaceAutenticacao/EnviarEmailAutenticacao" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AlterarSenha">
+      <soap:operation soapAction="http://tempuri.org/IInterfaceAutenticacao/AlterarSenha" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AlterarSituacaoPessoa">
+      <soap:operation soapAction="http://tempuri.org/IInterfaceAutenticacao/AlterarSituacaoPessoa" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarPerfil">
+      <soap:operation soapAction="http://tempuri.org/IInterfaceAutenticacao/ConsultarPerfil" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarPessoa">
+      <soap:operation soapAction="http://tempuri.org/IInterfaceAutenticacao/BuscarPessoa" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AtivarUsuario">
+      <soap:operation soapAction="http://tempuri.org/IInterfaceAutenticacao/AtivarUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpsBinding_IInterfaceAutenticacao" type="tns:IInterfaceAutenticacao">
+    <wsp:PolicyReference URI="#BasicHttpsBinding_IInterfaceAutenticacao_policy" />
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Autenticar">
+      <soap:operation soapAction="http://tempuri.org/IInterfaceAutenticacao/Autenticar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AutenticarRedeSocial">
+      <soap:operation soapAction="http://tempuri.org/IInterfaceAutenticacao/AutenticarRedeSocial" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CadastrarSenhaCriptografadaRedeSocial">
+      <soap:operation soapAction="http://tempuri.org/IInterfaceAutenticacao/CadastrarSenhaCriptografadaRedeSocial" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IncluirNovoPessoa">
+      <soap:operation soapAction="http://tempuri.org/IInterfaceAutenticacao/IncluirNovoPessoa" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EnviarEmailAutenticacao">
+      <soap:operation soapAction="http://tempuri.org/IInterfaceAutenticacao/EnviarEmailAutenticacao" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AlterarSenha">
+      <soap:operation soapAction="http://tempuri.org/IInterfaceAutenticacao/AlterarSenha" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AlterarSituacaoPessoa">
+      <soap:operation soapAction="http://tempuri.org/IInterfaceAutenticacao/AlterarSituacaoPessoa" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarPerfil">
+      <soap:operation soapAction="http://tempuri.org/IInterfaceAutenticacao/ConsultarPerfil" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarPessoa">
+      <soap:operation soapAction="http://tempuri.org/IInterfaceAutenticacao/BuscarPessoa" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AtivarUsuario">
+      <soap:operation soapAction="http://tempuri.org/IInterfaceAutenticacao/AtivarUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="InterfaceAutenticacao">
+    <wsdl:port name="BasicHttpBinding_IInterfaceAutenticacao" binding="tns:BasicHttpBinding_IInterfaceAutenticacao">
+      <soap:address location="http://authsvctheseed.azurewebsites.net/InterfaceAutenticacao.svc" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpsBinding_IInterfaceAutenticacao" binding="tns:BasicHttpsBinding_IInterfaceAutenticacao">
+      <soap:address location="https://authsvctheseed.azurewebsites.net/InterfaceAutenticacao.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

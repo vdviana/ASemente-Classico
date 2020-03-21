@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="f2f22998-7505-4a37-a41a-3721c847a1e0" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:55332/InterfaceVotacao.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="InterfaceVotacao.xsd" MetadataType="Schema" ID="148799d7-5c70-425c-920d-e8d8a6ba978c" SourceId="1" SourceUrl="http://localhost:55332/InterfaceVotacao.svc?xsd=xsd1" />
+    <MetadataFile FileName="InterfaceVotacao1.xsd" MetadataType="Schema" ID="4247e7cb-b561-4782-b1d1-52786f77df8f" SourceId="1" SourceUrl="http://localhost:55332/InterfaceVotacao.svc?xsd=xsd2" />
+    <MetadataFile FileName="InterfaceVotacao.disco" MetadataType="Disco" ID="4680a417-ddf6-484b-a18b-181f92918700" SourceId="1" SourceUrl="http://localhost:55332/InterfaceVotacao.svc?disco" />
+    <MetadataFile FileName="InterfaceVotacao.wsdl" MetadataType="Wsdl" ID="d4ec9475-60bf-4686-a72f-f6e33856e283" SourceId="1" SourceUrl="http://localhost:55332/InterfaceVotacao.svc?wsdl" />
+    <MetadataFile FileName="InterfaceVotacao2.xsd" MetadataType="Schema" ID="611d1abb-d789-420e-8990-e0fbb8943d0b" SourceId="1" SourceUrl="http://localhost:55332/InterfaceVotacao.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

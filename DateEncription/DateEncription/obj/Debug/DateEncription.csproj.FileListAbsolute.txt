@@ -1,0 +1,5 @@
+c:\users\vinicius\documents\visual studio 2015\Projects\DateEncription\DateEncription\obj\Debug\DateEncription.csprojResolveAssemblyReference.cache
+c:\users\vinicius\documents\visual studio 2015\Projects\DateEncription\DateEncription\bin\Debug\DateEncription.dll
+c:\users\vinicius\documents\visual studio 2015\Projects\DateEncription\DateEncription\bin\Debug\DateEncription.pdb
+c:\users\vinicius\documents\visual studio 2015\Projects\DateEncription\DateEncription\obj\Debug\DateEncription.dll
+c:\users\vinicius\documents\visual studio 2015\Projects\DateEncription\DateEncription\obj\Debug\DateEncription.pdb

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="fe1649f1-3a7a-49c7-bef5-0aa6a8cd8cd5" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:51075/InterfacePublicacao.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="InterfacePublicacao.xsd" MetadataType="Schema" ID="2fe77e0b-1359-4de0-89ba-5153f48b18ff" SourceId="1" SourceUrl="http://localhost:51075/InterfacePublicacao.svc?xsd=xsd3" />
+    <MetadataFile FileName="InterfacePublicacao1.xsd" MetadataType="Schema" ID="a3b4b8f9-606f-4b37-88b4-aec45e119075" SourceId="1" SourceUrl="http://localhost:51075/InterfacePublicacao.svc?xsd=xsd2" />
+    <MetadataFile FileName="InterfacePublicacao.disco" MetadataType="Disco" ID="a783dd6d-5cbe-4626-981c-f1136d4bbe3a" SourceId="1" SourceUrl="http://localhost:51075/InterfacePublicacao.svc?disco" />
+    <MetadataFile FileName="InterfacePublicacao.wsdl" MetadataType="Wsdl" ID="55e3aba8-d4e4-4985-9b70-2cfc2dc41f75" SourceId="1" SourceUrl="http://localhost:51075/InterfacePublicacao.svc?wsdl" />
+    <MetadataFile FileName="InterfacePublicacao2.xsd" MetadataType="Schema" ID="6d5f137e-23f3-4b6e-a9d2-701018571f70" SourceId="1" SourceUrl="http://localhost:51075/InterfacePublicacao.svc?xsd=xsd0" />
+    <MetadataFile FileName="InterfacePublicacao3.xsd" MetadataType="Schema" ID="b10dd5c3-46b4-495a-9832-9373a9664cf9" SourceId="1" SourceUrl="http://localhost:51075/InterfacePublicacao.svc?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

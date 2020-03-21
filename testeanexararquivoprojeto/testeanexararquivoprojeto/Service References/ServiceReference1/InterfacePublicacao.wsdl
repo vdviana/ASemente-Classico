@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="InterfacePublicacao" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:51075/InterfacePublicacao.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:51075/InterfacePublicacao.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:51075/InterfacePublicacao.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/ServicoPublicacao.TO" />
+      <xsd:import schemaLocation="http://localhost:51075/InterfacePublicacao.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IInterfacePublicacao_IncluirProjeto_InputMessage">
+    <wsdl:part name="parameters" element="tns:IncluirProjeto" />
+  </wsdl:message>
+  <wsdl:message name="IInterfacePublicacao_IncluirProjeto_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IncluirProjetoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInterfacePublicacao_AnexarArquivoProjeto_InputMessage">
+    <wsdl:part name="parameters" element="tns:AnexarArquivoProjeto" />
+  </wsdl:message>
+  <wsdl:message name="IInterfacePublicacao_AnexarArquivoProjeto_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AnexarArquivoProjetoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInterfacePublicacao_ListarProjetos_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListarProjetos" />
+  </wsdl:message>
+  <wsdl:message name="IInterfacePublicacao_ListarProjetos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListarProjetosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInterfacePublicacao_ConsultarProjeto_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarProjeto" />
+  </wsdl:message>
+  <wsdl:message name="IInterfacePublicacao_ConsultarProjeto_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarProjetoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInterfacePublicacao_ListarTiposProjeto_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListarTiposProjeto" />
+  </wsdl:message>
+  <wsdl:message name="IInterfacePublicacao_ListarTiposProjeto_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListarTiposProjetoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInterfacePublicacao_ListarArtigosdoProjeto_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListarArtigosdoProjeto" />
+  </wsdl:message>
+  <wsdl:message name="IInterfacePublicacao_ListarArtigosdoProjeto_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListarArtigosdoProjetoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInterfacePublicacao_AlterarSituacaoProjeto_InputMessage">
+    <wsdl:part name="parameters" element="tns:AlterarSituacaoProjeto" />
+  </wsdl:message>
+  <wsdl:message name="IInterfacePublicacao_AlterarSituacaoProjeto_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AlterarSituacaoProjetoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInterfacePublicacao_IncluirSugestaoArtigo_InputMessage">
+    <wsdl:part name="parameters" element="tns:IncluirSugestaoArtigo" />
+  </wsdl:message>
+  <wsdl:message name="IInterfacePublicacao_IncluirSugestaoArtigo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IncluirSugestaoArtigoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInterfacePublicacao_DeletarArtigosObsoletos_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeletarArtigosObsoletos" />
+  </wsdl:message>
+  <wsdl:message name="IInterfacePublicacao_DeletarArtigosObsoletos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeletarArtigosObsoletosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInterfacePublicacao_ListarPosicoesPoliticas_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListarPosicoesPoliticas" />
+  </wsdl:message>
+  <wsdl:message name="IInterfacePublicacao_ListarPosicoesPoliticas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListarPosicoesPoliticasResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IInterfacePublicacao">
+    <wsdl:operation name="IncluirProjeto">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInterfacePublicacao/IncluirProjeto" message="tns:IInterfacePublicacao_IncluirProjeto_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInterfacePublicacao/IncluirProjetoResponse" message="tns:IInterfacePublicacao_IncluirProjeto_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AnexarArquivoProjeto">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInterfacePublicacao/AnexarArquivoProjeto" message="tns:IInterfacePublicacao_AnexarArquivoProjeto_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInterfacePublicacao/AnexarArquivoProjetoResponse" message="tns:IInterfacePublicacao_AnexarArquivoProjeto_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarProjetos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInterfacePublicacao/ListarProjetos" message="tns:IInterfacePublicacao_ListarProjetos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInterfacePublicacao/ListarProjetosResponse" message="tns:IInterfacePublicacao_ListarProjetos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarProjeto">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInterfacePublicacao/ConsultarProjeto" message="tns:IInterfacePublicacao_ConsultarProjeto_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInterfacePublicacao/ConsultarProjetoResponse" message="tns:IInterfacePublicacao_ConsultarProjeto_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarTiposProjeto">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInterfacePublicacao/ListarTiposProjeto" message="tns:IInterfacePublicacao_ListarTiposProjeto_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInterfacePublicacao/ListarTiposProjetoResponse" message="tns:IInterfacePublicacao_ListarTiposProjeto_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarArtigosdoProjeto">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInterfacePublicacao/ListarArtigosdoProjeto" message="tns:IInterfacePublicacao_ListarArtigosdoProjeto_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInterfacePublicacao/ListarArtigosdoProjetoResponse" message="tns:IInterfacePublicacao_ListarArtigosdoProjeto_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AlterarSituacaoProjeto">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInterfacePublicacao/AlterarSituacaoProjeto" message="tns:IInterfacePublicacao_AlterarSituacaoProjeto_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInterfacePublicacao/AlterarSituacaoProjetoResponse" message="tns:IInterfacePublicacao_AlterarSituacaoProjeto_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IncluirSugestaoArtigo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInterfacePublicacao/IncluirSugestaoArtigo" message="tns:IInterfacePublicacao_IncluirSugestaoArtigo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInterfacePublicacao/IncluirSugestaoArtigoResponse" message="tns:IInterfacePublicacao_IncluirSugestaoArtigo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeletarArtigosObsoletos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInterfacePublicacao/DeletarArtigosObsoletos" message="tns:IInterfacePublicacao_DeletarArtigosObsoletos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInterfacePublicacao/DeletarArtigosObsoletosResponse" message="tns:IInterfacePublicacao_DeletarArtigosObsoletos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarPosicoesPoliticas">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInterfacePublicacao/ListarPosicoesPoliticas" message="tns:IInterfacePublicacao_ListarPosicoesPoliticas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInterfacePublicacao/ListarPosicoesPoliticasResponse" message="tns:IInterfacePublicacao_ListarPosicoesPoliticas_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IInterfacePublicacao" type="tns:IInterfacePublicacao">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="IncluirProjeto">
+      <soap:operation soapAction="http://tempuri.org/IInterfacePublicacao/IncluirProjeto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AnexarArquivoProjeto">
+      <soap:operation soapAction="http://tempuri.org/IInterfacePublicacao/AnexarArquivoProjeto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarProjetos">
+      <soap:operation soapAction="http://tempuri.org/IInterfacePublicacao/ListarProjetos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarProjeto">
+      <soap:operation soapAction="http://tempuri.org/IInterfacePublicacao/ConsultarProjeto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarTiposProjeto">
+      <soap:operation soapAction="http://tempuri.org/IInterfacePublicacao/ListarTiposProjeto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarArtigosdoProjeto">
+      <soap:operation soapAction="http://tempuri.org/IInterfacePublicacao/ListarArtigosdoProjeto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AlterarSituacaoProjeto">
+      <soap:operation soapAction="http://tempuri.org/IInterfacePublicacao/AlterarSituacaoProjeto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IncluirSugestaoArtigo">
+      <soap:operation soapAction="http://tempuri.org/IInterfacePublicacao/IncluirSugestaoArtigo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeletarArtigosObsoletos">
+      <soap:operation soapAction="http://tempuri.org/IInterfacePublicacao/DeletarArtigosObsoletos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarPosicoesPoliticas">
+      <soap:operation soapAction="http://tempuri.org/IInterfacePublicacao/ListarPosicoesPoliticas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="InterfacePublicacao">
+    <wsdl:port name="BasicHttpBinding_IInterfacePublicacao" binding="tns:BasicHttpBinding_IInterfacePublicacao">
+      <soap:address location="http://localhost:51075/InterfacePublicacao.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

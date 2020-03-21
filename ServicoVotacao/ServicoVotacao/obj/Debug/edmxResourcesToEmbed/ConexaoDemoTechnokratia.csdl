@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DemoTechnokratiaModelo" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Artigo">
+    <Key>
+      <PropertyRef Name="IdArtigo" />
+    </Key>
+    <Property Name="IdArtigo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdProjeto" Type="Int32" Nullable="false" />
+    <Property Name="IdPessoa" Type="Int32" Nullable="false" />
+    <Property Name="Descricao" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Ordem" Type="Int32" Nullable="false" />
+    <Property Name="IsSugestao" Type="Boolean" Nullable="false" />
+    <Property Name="Capitulo" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DataMovimento" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="Pessoa">
+    <Key>
+      <PropertyRef Name="IdPessoa" />
+    </Key>
+    <Property Name="IdPessoa" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Senha" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DataCadastro" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CPF" Type="Int64" Nullable="false" />
+    <Property Name="Nome" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Situacao" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ImagemPerfil" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Projeto">
+    <Key>
+      <PropertyRef Name="IdProjeto" />
+    </Key>
+    <Property Name="IdProjeto" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Descricao" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IdPessoa" Type="Int32" Nullable="false" />
+    <Property Name="PorcentagemAprov" Type="Int32" />
+    <Property Name="PorcentagemReprov" Type="Int32" />
+    <Property Name="Situacao" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="indiceAprov" Type="Int32" Nullable="false" />
+    <Property Name="PosicaoPolitica" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Epigrafe" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Ementa" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Fecho" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Justificativa" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Preambulo" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="DataCadastro" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="Voto">
+    <Key>
+      <PropertyRef Name="IdVoto" />
+    </Key>
+    <Property Name="IdVoto" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdPessoa" Type="Int32" Nullable="false" />
+    <Property Name="IdArtigo" Type="Int32" Nullable="false" />
+    <Property Name="OpcaoVoto" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_ARTIGO_PESSOA">
+    <End Role="PESSOA" Type="DemoTechnokratiaModelo.Pessoa" Multiplicity="1" />
+    <End Role="ARTIGO" Type="DemoTechnokratiaModelo.Artigo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PESSOA">
+        <PropertyRef Name="IdPessoa" />
+      </Principal>
+      <Dependent Role="ARTIGO">
+        <PropertyRef Name="IdPessoa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ARTIGO_VOTO">
+    <End Role="ARTIGO" Type="DemoTechnokratiaModelo.Artigo" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="VOTO" Type="DemoTechnokratiaModelo.Voto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ARTIGO">
+        <PropertyRef Name="IdArtigo" />
+      </Principal>
+      <Dependent Role="VOTO">
+        <PropertyRef Name="IdArtigo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PROJETOLEI_ARTIGO">
+    <End Role="PROJETOLEI" Type="DemoTechnokratiaModelo.Projeto" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="ARTIGO" Type="DemoTechnokratiaModelo.Artigo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PROJETOLEI">
+        <PropertyRef Name="IdProjeto" />
+      </Principal>
+      <Dependent Role="ARTIGO">
+        <PropertyRef Name="IdProjeto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PESSOA_PROJETOLEI">
+    <End Role="PESSOA" Type="DemoTechnokratiaModelo.Pessoa" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="PROJETOLEI" Type="DemoTechnokratiaModelo.Projeto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PESSOA">
+        <PropertyRef Name="IdPessoa" />
+      </Principal>
+      <Dependent Role="PROJETOLEI">
+        <PropertyRef Name="IdPessoa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VOTO_PESSOA">
+    <End Role="PESSOA" Type="DemoTechnokratiaModelo.Pessoa" Multiplicity="1" />
+    <End Role="VOTO" Type="DemoTechnokratiaModelo.Voto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PESSOA">
+        <PropertyRef Name="IdPessoa" />
+      </Principal>
+      <Dependent Role="VOTO">
+        <PropertyRef Name="IdPessoa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ConexaoDemoTechnokratia" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Artigo" EntityType="DemoTechnokratiaModelo.Artigo" />
+    <EntitySet Name="Pessoa" EntityType="DemoTechnokratiaModelo.Pessoa" />
+    <EntitySet Name="Projeto" EntityType="DemoTechnokratiaModelo.Projeto" />
+    <EntitySet Name="Voto" EntityType="DemoTechnokratiaModelo.Voto" />
+    <AssociationSet Name="FK_ARTIGO_PESSOA" Association="Self.FK_ARTIGO_PESSOA">
+      <End Role="PESSOA" EntitySet="Pessoa" />
+      <End Role="ARTIGO" EntitySet="Artigo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ARTIGO_VOTO" Association="Self.FK_ARTIGO_VOTO">
+      <End Role="ARTIGO" EntitySet="Artigo" />
+      <End Role="VOTO" EntitySet="Voto" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PROJETOLEI_ARTIGO" Association="Self.FK_PROJETOLEI_ARTIGO">
+      <End Role="PROJETOLEI" EntitySet="Projeto" />
+      <End Role="ARTIGO" EntitySet="Artigo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PESSOA_PROJETOLEI" Association="Self.FK_PESSOA_PROJETOLEI">
+      <End Role="PESSOA" EntitySet="Pessoa" />
+      <End Role="PROJETOLEI" EntitySet="Projeto" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VOTO_PESSOA" Association="Self.FK_VOTO_PESSOA">
+      <End Role="PESSOA" EntitySet="Pessoa" />
+      <End Role="VOTO" EntitySet="Voto" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

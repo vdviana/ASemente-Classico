@@ -1,0 +1,10 @@
+C:\Users\Vinicius\Documents\Visual Studio 2015\Projects\demotechnokratia\ServicoPublicacao\ServicoPublicacao\bin\ServicoPublicacao.dll.config
+C:\Users\Vinicius\Documents\Visual Studio 2015\Projects\demotechnokratia\ServicoPublicacao\ServicoPublicacao\bin\ServicoPublicacao.dll
+C:\Users\Vinicius\Documents\Visual Studio 2015\Projects\demotechnokratia\ServicoPublicacao\ServicoPublicacao\bin\ServicoPublicacao.pdb
+C:\Users\Vinicius\Documents\Visual Studio 2015\Projects\demotechnokratia\ServicoPublicacao\ServicoPublicacao\bin\DateEncription.dll
+C:\Users\Vinicius\Documents\Visual Studio 2015\Projects\demotechnokratia\ServicoPublicacao\ServicoPublicacao\bin\EntityFramework.dll
+C:\Users\Vinicius\Documents\Visual Studio 2015\Projects\demotechnokratia\ServicoPublicacao\ServicoPublicacao\bin\itextsharp.dll
+C:\Users\Vinicius\Documents\Visual Studio 2015\Projects\demotechnokratia\ServicoPublicacao\ServicoPublicacao\bin\EntityFramework.xml
+C:\Users\Vinicius\Documents\Visual Studio 2015\Projects\demotechnokratia\ServicoPublicacao\ServicoPublicacao\bin\itextsharp.xml
+C:\Users\Vinicius\Documents\Visual Studio 2015\Projects\demotechnokratia\ServicoPublicacao\ServicoPublicacao\obj\Debug\ServicoPublicacao.dll
+C:\Users\Vinicius\Documents\Visual Studio 2015\Projects\demotechnokratia\ServicoPublicacao\ServicoPublicacao\obj\Debug\ServicoPublicacao.pdb

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="b11a7713-72ab-4089-a5d5-6da5f9b3ba8c" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="https://authsvctheseed.azurewebsites.net/InterfaceAutenticacao.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="InterfaceAutenticacao.xsd" MetadataType="Schema" ID="9ec9c3d2-be44-4326-b383-521fec3df1a0" SourceId="1" SourceUrl="https://authsvctheseed.azurewebsites.net/InterfaceAutenticacao.svc?xsd=xsd1" />
+    <MetadataFile FileName="InterfaceAutenticacao.wsdl" MetadataType="Wsdl" ID="8d53c015-ee66-4057-9a52-6b549bd727f3" SourceId="1" SourceUrl="https://authsvctheseed.azurewebsites.net/InterfaceAutenticacao.svc?wsdl" />
+    <MetadataFile FileName="InterfaceAutenticacao1.xsd" MetadataType="Schema" ID="c6a157d0-5d54-4dc1-aac9-87ddcb208b4b" SourceId="1" SourceUrl="https://authsvctheseed.azurewebsites.net/InterfaceAutenticacao.svc?xsd=xsd0" />
+    <MetadataFile FileName="InterfaceAutenticacao2.xsd" MetadataType="Schema" ID="9e8e32da-c860-4ad8-807a-d4d38e4b5a15" SourceId="1" SourceUrl="https://authsvctheseed.azurewebsites.net/InterfaceAutenticacao.svc?xsd=xsd3" />
+    <MetadataFile FileName="InterfaceAutenticacao3.xsd" MetadataType="Schema" ID="2a745b8b-fff1-4b4e-b0c8-328c2bb5d0c0" SourceId="1" SourceUrl="https://authsvctheseed.azurewebsites.net/InterfaceAutenticacao.svc?xsd=xsd2" />
+    <MetadataFile FileName="InterfaceAutenticacao.disco" MetadataType="Disco" ID="1dcc3b3a-1d7c-4e85-ba5a-0b9b038c51b7" SourceId="1" SourceUrl="https://authsvctheseed.azurewebsites.net/InterfaceAutenticacao.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

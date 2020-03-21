@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ModeloDemoTechnokratiaStoreContainer" CdmEntityContainer="ConexaoDemoTechnokratia">
+    <EntitySetMapping Name="Artigo">
+      <EntityTypeMapping TypeName="ModeloDemoTechnokratia.Artigo">
+        <MappingFragment StoreEntitySet="ARTIGO">
+          <ScalarProperty Name="IdArtigoSubstitutivo" ColumnName="ID_ARTIGO_SUBSTITUTIVO" />
+          <ScalarProperty Name="DataMovimento" ColumnName="DATAMOVIMENTO" />
+          <ScalarProperty Name="IdArtigo" ColumnName="ID_ARTIGO" />
+          <ScalarProperty Name="IdProjeto" ColumnName="ID_PROJETO" />
+          <ScalarProperty Name="IdPessoa" ColumnName="ID_PESSOA" />
+          <ScalarProperty Name="Descricao" ColumnName="DESCRICAO" />
+          <ScalarProperty Name="Ordem" ColumnName="ORDEM" />
+          <ScalarProperty Name="IsSugestao" ColumnName="ISSUGESTAO" />
+          <ScalarProperty Name="Capitulo" ColumnName="CAPITULO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProjetoLei">
+      <EntityTypeMapping TypeName="ModeloDemoTechnokratia.ProjetoLei">
+        <MappingFragment StoreEntitySet="PROJETOLEI">
+          <ScalarProperty Name="CaminhoArquivo" ColumnName="CAMINHOARQUIVO" />
+          <ScalarProperty Name="AnoRegistro" ColumnName="ANO" />
+          <ScalarProperty Name="NumeracaoRegistro" ColumnName="NUMERACAO" />
+          <ScalarProperty Name="TipoProjeto" ColumnName="TIPOPROJETO" />
+          <ScalarProperty Name="CaminhoImagem" ColumnName="CAMINHOIMAGEM" />
+          <ScalarProperty Name="Visibilidade" ColumnName="VISIBILIDADE" />
+          <ScalarProperty Name="Titulo" ColumnName="TITULO" />
+          <ScalarProperty Name="DataCadastro" ColumnName="DATACADASTRO" />
+          <ScalarProperty Name="Preambulo" ColumnName="PREAMBULO" />
+          <ScalarProperty Name="IdProjeto" ColumnName="ID_PROJETO" />
+          <ScalarProperty Name="Descricao" ColumnName="DESCRICAO" />
+          <ScalarProperty Name="IdPessoa" ColumnName="ID_PESSOA" />
+          <ScalarProperty Name="PorcentagemAprov" ColumnName="PORCENTAGEM_APROVADO" />
+          <ScalarProperty Name="PorcentagemReprov" ColumnName="PORCENTAGEM_REPROVADO" />
+          <ScalarProperty Name="Situacao" ColumnName="SITUACAO" />
+          <ScalarProperty Name="IndiceAprov" ColumnName="INDICE_APROVACAO" />
+          <ScalarProperty Name="PosicaoPolitica" ColumnName="POSICAO_POLITICA" />
+          <ScalarProperty Name="Epigrafe" ColumnName="EPIGRAFE" />
+          <ScalarProperty Name="Ementa" ColumnName="EMENTA" />
+          <ScalarProperty Name="Fecho" ColumnName="FECHO" />
+          <ScalarProperty Name="Justificativa" ColumnName="JUSTIFICATIVA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PosicaoPolitica">
+      <EntityTypeMapping TypeName="ModeloDemoTechnokratia.PosicaoPolitica">
+        <MappingFragment StoreEntitySet="POSICAO_POLITICA">
+          <ScalarProperty Name="Descricao" ColumnName="DESC_POSICAO" />
+          <ScalarProperty Name="Id" ColumnName="ID_POSICAO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TipoProjeto">
+      <EntityTypeMapping TypeName="ModeloDemoTechnokratia.TipoProjeto">
+        <MappingFragment StoreEntitySet="TIPOPROJETO">
+          <ScalarProperty Name="Descricao" ColumnName="DESCRICAO" />
+          <ScalarProperty Name="Abreviacao" ColumnName="ABREV" />
+          <ScalarProperty Name="Id" ColumnName="ID_TIPO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

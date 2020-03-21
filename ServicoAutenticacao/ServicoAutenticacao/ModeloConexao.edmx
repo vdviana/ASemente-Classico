@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="DemoTechnokratiaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="PESSOA">
+          <Key>
+            <PropertyRef Name="ID_PESSOA" />
+          </Key>
+          <Property Name="ID_PESSOA" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EMAIL" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="SENHA" Type="varchar" MaxLength="50" />
+          <Property Name="DATA_CADASTRO" Type="datetime" Nullable="false" />
+          <Property Name="CPF" Type="bigint" />
+          <Property Name="NOME" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="SITUACAO" Type="varchar" MaxLength="100" />
+          <Property Name="IMAGEMPERFIL" Type="varchar" MaxLength="500" />
+          <Property Name="FacebookID" Type="varchar" MaxLength="50" />
+          <Property Name="LinkedInID" Type="varchar" MaxLength="50" />
+          <Property Name="TwitterID" Type="varchar" MaxLength="50" />
+          <Property Name="Google+ID" Type="varchar" MaxLength="50" />
+          <Property Name="InstagramID" Type="varchar" MaxLength="50" />
+          <Property Name="ATIVACAO" Type="varchar" MaxLength="500" />
+        </EntityType>
+        <EntityContainer Name="DemoTechnokratiaModelStoreContainer">
+          <EntitySet Name="PESSOA" EntityType="Self.PESSOA" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DemoTechnokratiaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="ConexaoDemoTechnokratia" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Pessoa" EntityType="DemoTechnokratiaModel.Pessoa" />
+        </EntityContainer>
+        <EntityType Name="Pessoa">
+          <Key>
+            <PropertyRef Name="IdPessoa" />
+          </Key>
+          <Property Name="IdPessoa" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Email" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Senha" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DataCadastro" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CPF" Type="Int64" />
+          <Property Name="Nome" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Situacao" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ImagemPerfil" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="FacebookID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LinkedInID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TwitterID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Google_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="InstagramID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Ativacao" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DemoTechnokratiaModelStoreContainer" CdmEntityContainer="ConexaoDemoTechnokratia">
+          <EntitySetMapping Name="Pessoa">
+            <EntityTypeMapping TypeName="DemoTechnokratiaModel.Pessoa">
+              <MappingFragment StoreEntitySet="PESSOA">
+                <ScalarProperty Name="Ativacao" ColumnName="ATIVACAO" />
+                <ScalarProperty Name="InstagramID" ColumnName="InstagramID" />
+                <ScalarProperty Name="Google_ID" ColumnName="Google+ID" />
+                <ScalarProperty Name="TwitterID" ColumnName="TwitterID" />
+                <ScalarProperty Name="LinkedInID" ColumnName="LinkedInID" />
+                <ScalarProperty Name="FacebookID" ColumnName="FacebookID" />
+                <ScalarProperty Name="ImagemPerfil" ColumnName="IMAGEMPERFIL" />
+                <ScalarProperty Name="Situacao" ColumnName="SITUACAO" />
+                <ScalarProperty Name="Nome" ColumnName="NOME" />
+                <ScalarProperty Name="CPF" ColumnName="CPF" />
+                <ScalarProperty Name="DataCadastro" ColumnName="DATA_CADASTRO" />
+                <ScalarProperty Name="Senha" ColumnName="SENHA" />
+                <ScalarProperty Name="Email" ColumnName="EMAIL" />
+                <ScalarProperty Name="IdPessoa" ColumnName="ID_PESSOA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

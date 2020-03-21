@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DemoTechnokratiaModelStoreContainer" CdmEntityContainer="ConexaoDemoTechnokratia">
+    <EntitySetMapping Name="Comentario">
+      <EntityTypeMapping TypeName="DemoTechnokratiaModel.Comentario">
+        <MappingFragment StoreEntitySet="COMENTARIO">
+          <ScalarProperty Name="IdComentario" ColumnName="ID_COMENTARIO" />
+          <ScalarProperty Name="IdArtigo" ColumnName="ID_ARTIGO" />
+          <ScalarProperty Name="IdPessoa" ColumnName="ID_PESSOA" />
+          <ScalarProperty Name="Descricao" ColumnName="DESCRICAO" />
+          <ScalarProperty Name="Ordem" ColumnName="ORDEM" />
+          <ScalarProperty Name="IdComentarioPai" ColumnName="IDCOMENTARIOPAI" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Referencia">
+      <EntityTypeMapping TypeName="DemoTechnokratiaModel.Referencia">
+        <MappingFragment StoreEntitySet="REFERENCIA">
+          <ScalarProperty Name="IdReferencia" ColumnName="ID_REFERENCIA" />
+          <ScalarProperty Name="IdComentario" ColumnName="ID_COMENTARIO" />
+          <ScalarProperty Name="LinkReferencia" ColumnName="LINK_REFERENCIA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

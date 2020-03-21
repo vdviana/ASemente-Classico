@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DemoTechnokratiaModelStoreContainer" CdmEntityContainer="ConexaoDemoTechnokratia">
+    <EntitySetMapping Name="Pessoa">
+      <EntityTypeMapping TypeName="DemoTechnokratiaModel.Pessoa">
+        <MappingFragment StoreEntitySet="PESSOA">
+          <ScalarProperty Name="Ativacao" ColumnName="ATIVACAO" />
+          <ScalarProperty Name="InstagramID" ColumnName="InstagramID" />
+          <ScalarProperty Name="Google_ID" ColumnName="Google+ID" />
+          <ScalarProperty Name="TwitterID" ColumnName="TwitterID" />
+          <ScalarProperty Name="LinkedInID" ColumnName="LinkedInID" />
+          <ScalarProperty Name="FacebookID" ColumnName="FacebookID" />
+          <ScalarProperty Name="ImagemPerfil" ColumnName="IMAGEMPERFIL" />
+          <ScalarProperty Name="Situacao" ColumnName="SITUACAO" />
+          <ScalarProperty Name="Nome" ColumnName="NOME" />
+          <ScalarProperty Name="CPF" ColumnName="CPF" />
+          <ScalarProperty Name="DataCadastro" ColumnName="DATA_CADASTRO" />
+          <ScalarProperty Name="Senha" ColumnName="SENHA" />
+          <ScalarProperty Name="Email" ColumnName="EMAIL" />
+          <ScalarProperty Name="IdPessoa" ColumnName="ID_PESSOA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

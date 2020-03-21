@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="TechnoDemokratiaModeloStoreContainer" CdmEntityContainer="ConexaoDemoTecnokratia">
+    <EntitySetMapping Name="Artigo">
+      <EntityTypeMapping TypeName="TechnoDemokratiaModelo.Artigo">
+        <MappingFragment StoreEntitySet="ARTIGO">
+          <ScalarProperty Name="IdProjeto" ColumnName="ID_PROJETO" />
+          <ScalarProperty Name="IdArtigo" ColumnName="ID_ARTIGO" />
+          <ScalarProperty Name="IdPessoa" ColumnName="ID_PESSOA" />
+          <ScalarProperty Name="Descricao" ColumnName="DESCRICAO" />
+          <ScalarProperty Name="Ordem" ColumnName="ORDEM" />
+          <ScalarProperty Name="IsSugestao" ColumnName="ISSUGESTAO" />
+          <ScalarProperty Name="Capitulo" ColumnName="CAPITULO" />
+          <ScalarProperty Name="DataMovimento" ColumnName="DATAMOVIMENTO" />
+          <ScalarProperty Name="IdArtigoSubstitutivo" ColumnName="ID_ARTIGO_SUBSTITUTIVO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProjetoLei">
+      <EntityTypeMapping TypeName="TechnoDemokratiaModelo.ProjetoLei">
+        <MappingFragment StoreEntitySet="PROJETOLEI">
+          <ScalarProperty Name="IdProjeto" ColumnName="ID_PROJETO" />
+          <ScalarProperty Name="Descricao" ColumnName="DESCRICAO" />
+          <ScalarProperty Name="IdPessoa" ColumnName="ID_PESSOA" />
+          <ScalarProperty Name="PorcentagemAprov" ColumnName="PORCENTAGEM_APROVADO" />
+          <ScalarProperty Name="PorcentagemReprov" ColumnName="PORCENTAGEM_REPROVADO" />
+          <ScalarProperty Name="Situacao" ColumnName="SITUACAO" />
+          <ScalarProperty Name="IndiceAprov" ColumnName="INDICE_APROVACAO" />
+          <ScalarProperty Name="PosicaoPolitica" ColumnName="POSICAO_POLITICA" />
+          <ScalarProperty Name="Epigrafe" ColumnName="EPIGRAFE" />
+          <ScalarProperty Name="Ementa" ColumnName="EMENTA" />
+          <ScalarProperty Name="Fecho" ColumnName="FECHO" />
+          <ScalarProperty Name="Justificativa" ColumnName="JUSTIFICATIVA" />
+          <ScalarProperty Name="Preambulo" ColumnName="PREAMBULO" />
+          <ScalarProperty Name="DataCadastro" ColumnName="DATACADASTRO" />
+          <ScalarProperty Name="Titulo" ColumnName="TITULO" />
+          <ScalarProperty Name="Visibilidade" ColumnName="VISIBILIDADE" />
+          <ScalarProperty Name="CaminhoIMagem" ColumnName="CAMINHOIMAGEM" />
+          <ScalarProperty Name="TipoProjeto" ColumnName="TIPOPROJETO" />
+          <ScalarProperty Name="NumeracaoRegistro" ColumnName="NUMERACAO" />
+          <ScalarProperty Name="AnoRegistro" ColumnName="ANO" />
+          <ScalarProperty Name="CaminhoArquivo" ColumnName="CAMINHOARQUIVO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PosicaoPolitica">
+      <EntityTypeMapping TypeName="TechnoDemokratiaModelo.PosicaoPolitica">
+        <MappingFragment StoreEntitySet="POSICAO_POLITICA">
+          <ScalarProperty Name="Id" ColumnName="ID_POSICAO" />
+          <ScalarProperty Name="Descricao" ColumnName="DESC_POSICAO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TipoProjeto">
+      <EntityTypeMapping TypeName="TechnoDemokratiaModelo.TipoProjeto">
+        <MappingFragment StoreEntitySet="TIPOPROJETO">
+          <ScalarProperty Name="Id" ColumnName="ID_TIPO" />
+          <ScalarProperty Name="Abreviacao" ColumnName="ABREV" />
+          <ScalarProperty Name="Descricao" ColumnName="DESCRICAO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="FK_PROJETOLEI_ARTIGO" TypeName="TechnoDemokratiaModelo.FK_PROJETOLEI_ARTIGO" StoreEntitySet="ARTIGO">
+      <EndProperty Name="Artigo">
+        <ScalarProperty Name="IdArtigo" ColumnName="ID_ARTIGO" />
+      </EndProperty>
+      <EndProperty Name="ProjetoLei">
+        <ScalarProperty Name="IdProjeto" ColumnName="ID_PROJETO" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

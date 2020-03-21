@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:59582/InterfaceArticulacao.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/ServicoArticulacao.TO" />
+  <xs:element name="Comentar">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/ServicoArticulacao.TO" minOccurs="0" name="p_Comentario" nillable="true" type="q1:ComentarioTO" />
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/ServicoArticulacao.TO" minOccurs="0" name="p_referencias" nillable="true" type="q2:ArrayOfReferenciaTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ComentarResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/ServicoArticulacao.TO" minOccurs="0" name="ComentarResult" nillable="true" type="q3:RetornoServicoTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EditarComentario">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/ServicoArticulacao.TO" minOccurs="0" name="p_comentarioTO" nillable="true" type="q4:ComentarioTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EditarComentarioResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/ServicoArticulacao.TO" minOccurs="0" name="EditarComentarioResult" nillable="true" type="q5:RetornoServicoTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoverComentario">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/ServicoArticulacao.TO" minOccurs="0" name="p_comentarioTO" nillable="true" type="q6:ComentarioTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoverComentarioResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/ServicoArticulacao.TO" minOccurs="0" name="RemoverComentarioResult" nillable="true" type="q7:RetornoServicoTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoverReferencia">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/ServicoArticulacao.TO" minOccurs="0" name="p_ReferenciaTO" nillable="true" type="q8:ReferenciaTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoverReferenciaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/ServicoArticulacao.TO" minOccurs="0" name="RemoverReferenciaResult" nillable="true" type="q9:RetornoServicoTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IncluirReferencia">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/ServicoArticulacao.TO" minOccurs="0" name="p_ReferenciaTO" nillable="true" type="q10:ReferenciaTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IncluirReferenciaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/ServicoArticulacao.TO" minOccurs="0" name="IncluirReferenciaResult" nillable="true" type="q11:RetornoServicoTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarComentario">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="p_idArtigo" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarComentarioResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/ServicoArticulacao.TO" minOccurs="0" name="ConsultarComentarioResult" nillable="true" type="q12:ComentarioTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListarReferencias">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="p_idComentario" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListarReferenciasResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/ServicoArticulacao.TO" minOccurs="0" name="ListarReferenciasResult" nillable="true" type="q13:ListaReferenciaTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

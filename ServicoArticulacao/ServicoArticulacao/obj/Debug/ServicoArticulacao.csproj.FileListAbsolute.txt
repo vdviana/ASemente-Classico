@@ -1,0 +1,9 @@
+C:\Users\Vinicius\Documents\Visual Studio 2015\Projects\demotechnokratia\ServicoArticulacao\ServicoArticulacao\bin\ServicoArticulacao.dll.config
+C:\Users\Vinicius\Documents\Visual Studio 2015\Projects\demotechnokratia\ServicoArticulacao\ServicoArticulacao\bin\ServicoArticulacao.dll
+C:\Users\Vinicius\Documents\Visual Studio 2015\Projects\demotechnokratia\ServicoArticulacao\ServicoArticulacao\bin\ServicoArticulacao.pdb
+C:\Users\Vinicius\Documents\Visual Studio 2015\Projects\demotechnokratia\ServicoArticulacao\ServicoArticulacao\bin\DateEncription.dll
+C:\Users\Vinicius\Documents\Visual Studio 2015\Projects\demotechnokratia\ServicoArticulacao\ServicoArticulacao\bin\EntityFramework.dll
+C:\Users\Vinicius\Documents\Visual Studio 2015\Projects\demotechnokratia\ServicoArticulacao\ServicoArticulacao\bin\EntityFramework.xml
+C:\Users\Vinicius\Documents\Visual Studio 2015\Projects\demotechnokratia\ServicoArticulacao\ServicoArticulacao\obj\Debug\ServicoArticulacao.csprojResolveAssemblyReference.cache
+C:\Users\Vinicius\Documents\Visual Studio 2015\Projects\demotechnokratia\ServicoArticulacao\ServicoArticulacao\obj\Debug\ServicoArticulacao.dll
+C:\Users\Vinicius\Documents\Visual Studio 2015\Projects\demotechnokratia\ServicoArticulacao\ServicoArticulacao\obj\Debug\ServicoArticulacao.pdb

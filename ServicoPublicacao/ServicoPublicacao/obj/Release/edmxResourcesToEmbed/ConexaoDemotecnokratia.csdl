@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ModeloDemoTechnokratia" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Artigo">
+    <Key>
+      <PropertyRef Name="IdArtigo" />
+    </Key>
+    <Property Name="IdArtigo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdProjeto" Type="Int32" Nullable="false" />
+    <Property Name="IdPessoa" Type="Int32" Nullable="false" />
+    <Property Name="Descricao" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Ordem" Type="Int32" Nullable="false" />
+    <Property Name="IsSugestao" Type="Boolean" Nullable="false" />
+    <Property Name="Capitulo" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="DataMovimento" Type="DateTime" Precision="3" />
+    <Property Name="IdArtigoSubstitutivo" Type="Int32" />
+  </EntityType>
+  <EntityType Name="ProjetoLei">
+    <Key>
+      <PropertyRef Name="IdProjeto" />
+    </Key>
+    <Property Name="IdProjeto" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Descricao" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="IdPessoa" Type="Int32" Nullable="false" />
+    <Property Name="PorcentagemAprov" Type="Int32" />
+    <Property Name="PorcentagemReprov" Type="Int32" />
+    <Property Name="Situacao" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IndiceAprov" Type="Int32" Nullable="false" />
+    <Property Name="PosicaoPolitica" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Epigrafe" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Ementa" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Fecho" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Justificativa" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Preambulo" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="DataCadastro" Type="DateTime" Precision="3" />
+    <Property Name="Titulo" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Visibilidade" Type="Boolean" />
+    <Property Name="CaminhoImagem" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="TipoProjeto" Type="String" Nullable="false" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="NumeracaoRegistro" Type="Int32" />
+    <Property Name="AnoRegistro" Type="Int32" />
+    <Property Name="CaminhoArquivo" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <Association Name="FK_PROJETOLEI_ARTIGO">
+    <End Role="PROJETOLEI" Type="ModeloDemoTechnokratia.ProjetoLei" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="ARTIGO" Type="ModeloDemoTechnokratia.Artigo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PROJETOLEI">
+        <PropertyRef Name="IdProjeto" />
+      </Principal>
+      <Dependent Role="ARTIGO">
+        <PropertyRef Name="IdProjeto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ConexaoDemoTechnokratia" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Artigo" EntityType="ModeloDemoTechnokratia.Artigo" />
+    <EntitySet Name="ProjetoLei" EntityType="ModeloDemoTechnokratia.ProjetoLei" />
+    <AssociationSet Name="FK_PROJETOLEI_ARTIGO" Association="Self.FK_PROJETOLEI_ARTIGO">
+      <End Role="PROJETOLEI" EntitySet="ProjetoLei" />
+      <End Role="ARTIGO" EntitySet="Artigo" />
+    </AssociationSet>
+    <EntitySet Name="PosicaoPolitica" EntityType="ModeloDemoTechnokratia.PosicaoPolitica" />
+    <EntitySet Name="TipoProjeto" EntityType="ModeloDemoTechnokratia.TipoProjeto" />
+  </EntityContainer>
+  <EntityType Name="PosicaoPolitica">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="Descricao" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Descricao" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="TipoProjeto">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="Abreviacao" />
+      <PropertyRef Name="Descricao" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Abreviacao" Type="String" Nullable="false" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="Descricao" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+  </EntityType>
+</Schema>

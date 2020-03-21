@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DemoTechnokratiaModelo.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="ARTIGO">
+    <Key>
+      <PropertyRef Name="ID_ARTIGO" />
+    </Key>
+    <Property Name="ID_ARTIGO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_PROJETO" Type="int" Nullable="false" />
+    <Property Name="ID_PESSOA" Type="int" Nullable="false" />
+    <Property Name="DESCRICAO" Type="varchar(max)" />
+    <Property Name="ORDEM" Type="int" Nullable="false" />
+    <Property Name="ISSUGESTAO" Type="bit" Nullable="false" />
+    <Property Name="CAPITULO" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="DATAMOVIMENTO" Type="datetime" />
+  </EntityType>
+  <EntityType Name="PESSOA">
+    <Key>
+      <PropertyRef Name="ID_PESSOA" />
+    </Key>
+    <Property Name="ID_PESSOA" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EMAIL" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="SENHA" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="DATA_CADASTRO" Type="datetime" Nullable="false" />
+    <Property Name="CPF" Type="bigint" Nullable="false" />
+    <Property Name="NOME" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="SITUACAO" Type="varchar" MaxLength="100" />
+    <Property Name="IMAGEMPERFIL" Type="varchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="PROJETOLEI">
+    <Key>
+      <PropertyRef Name="ID_PROJETO" />
+    </Key>
+    <Property Name="ID_PROJETO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DESCRICAO" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="ID_PESSOA" Type="int" Nullable="false" />
+    <Property Name="PORCENTAGEM_APROVADO" Type="int" />
+    <Property Name="PORCENTAGEM_REPROVADO" Type="int" />
+    <Property Name="SITUACAO" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="INDICE_APROVACAO" Type="int" Nullable="false" />
+    <Property Name="POSICAO_POLITICA" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="EPIGRAFE" Type="varchar(max)" />
+    <Property Name="EMENTA" Type="varchar(max)" />
+    <Property Name="FECHO" Type="varchar(max)" />
+    <Property Name="JUSTIFICATIVA" Type="varchar(max)" />
+    <Property Name="PREAMBULO" Type="varchar" MaxLength="40" />
+    <Property Name="DATACADASTRO" Type="datetime" />
+  </EntityType>
+  <EntityType Name="VOTO">
+    <Key>
+      <PropertyRef Name="ID_VOTO" />
+    </Key>
+    <Property Name="ID_VOTO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_PESSOA" Type="int" Nullable="false" />
+    <Property Name="ID_ARTIGO" Type="int" Nullable="false" />
+    <Property Name="OPCAO_VOTO" Type="bit" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_ARTIGO_PESSOA">
+    <End Role="PESSOA" Type="Self.PESSOA" Multiplicity="1" />
+    <End Role="ARTIGO" Type="Self.ARTIGO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PESSOA">
+        <PropertyRef Name="ID_PESSOA" />
+      </Principal>
+      <Dependent Role="ARTIGO">
+        <PropertyRef Name="ID_PESSOA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ARTIGO_VOTO">
+    <End Role="ARTIGO" Type="Self.ARTIGO" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="VOTO" Type="Self.VOTO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ARTIGO">
+        <PropertyRef Name="ID_ARTIGO" />
+      </Principal>
+      <Dependent Role="VOTO">
+        <PropertyRef Name="ID_ARTIGO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PESSOA_PROJETOLEI">
+    <End Role="PESSOA" Type="Self.PESSOA" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="PROJETOLEI" Type="Self.PROJETOLEI" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PESSOA">
+        <PropertyRef Name="ID_PESSOA" />
+      </Principal>
+      <Dependent Role="PROJETOLEI">
+        <PropertyRef Name="ID_PESSOA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PROJETOLEI_ARTIGO">
+    <End Role="PROJETOLEI" Type="Self.PROJETOLEI" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="ARTIGO" Type="Self.ARTIGO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PROJETOLEI">
+        <PropertyRef Name="ID_PROJETO" />
+      </Principal>
+      <Dependent Role="ARTIGO">
+        <PropertyRef Name="ID_PROJETO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VOTO_PESSOA">
+    <End Role="PESSOA" Type="Self.PESSOA" Multiplicity="1" />
+    <End Role="VOTO" Type="Self.VOTO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PESSOA">
+        <PropertyRef Name="ID_PESSOA" />
+      </Principal>
+      <Dependent Role="VOTO">
+        <PropertyRef Name="ID_PESSOA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="DemoTechnokratiaModeloStoreContainer">
+    <EntitySet Name="ARTIGO" EntityType="Self.ARTIGO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PESSOA" EntityType="Self.PESSOA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PROJETOLEI" EntityType="Self.PROJETOLEI" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="VOTO" EntityType="Self.VOTO" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_ARTIGO_PESSOA" Association="Self.FK_ARTIGO_PESSOA">
+      <End Role="PESSOA" EntitySet="PESSOA" />
+      <End Role="ARTIGO" EntitySet="ARTIGO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ARTIGO_VOTO" Association="Self.FK_ARTIGO_VOTO">
+      <End Role="ARTIGO" EntitySet="ARTIGO" />
+      <End Role="VOTO" EntitySet="VOTO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PESSOA_PROJETOLEI" Association="Self.FK_PESSOA_PROJETOLEI">
+      <End Role="PESSOA" EntitySet="PESSOA" />
+      <End Role="PROJETOLEI" EntitySet="PROJETOLEI" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PROJETOLEI_ARTIGO" Association="Self.FK_PROJETOLEI_ARTIGO">
+      <End Role="PROJETOLEI" EntitySet="PROJETOLEI" />
+      <End Role="ARTIGO" EntitySet="ARTIGO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VOTO_PESSOA" Association="Self.FK_VOTO_PESSOA">
+      <End Role="PESSOA" EntitySet="PESSOA" />
+      <End Role="VOTO" EntitySet="VOTO" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

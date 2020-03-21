@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DemoTechnokratiaModeloStoreContainer" CdmEntityContainer="ConexaoDemoTechnokratia">
+    <EntitySetMapping Name="Artigo">
+      <EntityTypeMapping TypeName="DemoTechnokratiaModelo.Artigo">
+        <MappingFragment StoreEntitySet="ARTIGO">
+          <ScalarProperty Name="IdArtigo" ColumnName="ID_ARTIGO" />
+          <ScalarProperty Name="IdProjeto" ColumnName="ID_PROJETO" />
+          <ScalarProperty Name="IdPessoa" ColumnName="ID_PESSOA" />
+          <ScalarProperty Name="Descricao" ColumnName="DESCRICAO" />
+          <ScalarProperty Name="Ordem" ColumnName="ORDEM" />
+          <ScalarProperty Name="IsSugestao" ColumnName="ISSUGESTAO" />
+          <ScalarProperty Name="Capitulo" ColumnName="CAPITULO" />
+          <ScalarProperty Name="DataMovimento" ColumnName="DATAMOVIMENTO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Pessoa">
+      <EntityTypeMapping TypeName="DemoTechnokratiaModelo.Pessoa">
+        <MappingFragment StoreEntitySet="PESSOA">
+          <ScalarProperty Name="IdPessoa" ColumnName="ID_PESSOA" />
+          <ScalarProperty Name="Email" ColumnName="EMAIL" />
+          <ScalarProperty Name="Senha" ColumnName="SENHA" />
+          <ScalarProperty Name="DataCadastro" ColumnName="DATA_CADASTRO" />
+          <ScalarProperty Name="CPF" ColumnName="CPF" />
+          <ScalarProperty Name="Nome" ColumnName="NOME" />
+          <ScalarProperty Name="Situacao" ColumnName="SITUACAO" />
+          <ScalarProperty Name="ImagemPerfil" ColumnName="IMAGEMPERFIL" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Projeto">
+      <EntityTypeMapping TypeName="DemoTechnokratiaModelo.Projeto">
+        <MappingFragment StoreEntitySet="PROJETOLEI">
+          <ScalarProperty Name="IdProjeto" ColumnName="ID_PROJETO" />
+          <ScalarProperty Name="Descricao" ColumnName="DESCRICAO" />
+          <ScalarProperty Name="IdPessoa" ColumnName="ID_PESSOA" />
+          <ScalarProperty Name="PorcentagemAprov" ColumnName="PORCENTAGEM_APROVADO" />
+          <ScalarProperty Name="PorcentagemReprov" ColumnName="PORCENTAGEM_REPROVADO" />
+          <ScalarProperty Name="Situacao" ColumnName="SITUACAO" />
+          <ScalarProperty Name="indiceAprov" ColumnName="INDICE_APROVACAO" />
+          <ScalarProperty Name="PosicaoPolitica" ColumnName="POSICAO_POLITICA" />
+          <ScalarProperty Name="Epigrafe" ColumnName="EPIGRAFE" />
+          <ScalarProperty Name="Ementa" ColumnName="EMENTA" />
+          <ScalarProperty Name="Fecho" ColumnName="FECHO" />
+          <ScalarProperty Name="Justificativa" ColumnName="JUSTIFICATIVA" />
+          <ScalarProperty Name="Preambulo" ColumnName="PREAMBULO" />
+          <ScalarProperty Name="DataCadastro" ColumnName="DATACADASTRO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Voto">
+      <EntityTypeMapping TypeName="DemoTechnokratiaModelo.Voto">
+        <MappingFragment StoreEntitySet="VOTO">
+          <ScalarProperty Name="IdVoto" ColumnName="ID_VOTO" />
+          <ScalarProperty Name="IdPessoa" ColumnName="ID_PESSOA" />
+          <ScalarProperty Name="IdArtigo" ColumnName="ID_ARTIGO" />
+          <ScalarProperty Name="OpcaoVoto" ColumnName="OPCAO_VOTO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

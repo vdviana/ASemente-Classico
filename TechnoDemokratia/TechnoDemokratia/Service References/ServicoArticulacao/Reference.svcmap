@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="a83d8793-fb74-49f5-a551-aeefd8ae524c" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:59582/InterfaceArticulacao.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="InterfaceArticulacao.xsd" MetadataType="Schema" ID="0eaa7a7f-af9a-4d10-acea-3953e6bf8ff3" SourceId="1" SourceUrl="http://localhost:59582/InterfaceArticulacao.svc?xsd=xsd1" />
+    <MetadataFile FileName="InterfaceArticulacao1.xsd" MetadataType="Schema" ID="55e11e9f-2db8-41c7-870a-886047a5c978" SourceId="1" SourceUrl="http://localhost:59582/InterfaceArticulacao.svc?xsd=xsd0" />
+    <MetadataFile FileName="InterfaceArticulacao2.xsd" MetadataType="Schema" ID="86e23161-c219-47c3-add4-18b0d1c21eee" SourceId="1" SourceUrl="http://localhost:59582/InterfaceArticulacao.svc?xsd=xsd2" />
+    <MetadataFile FileName="InterfaceArticulacao.disco" MetadataType="Disco" ID="cdd6c4c5-eba9-4470-a305-acd771612e23" SourceId="1" SourceUrl="http://localhost:59582/InterfaceArticulacao.svc?disco" />
+    <MetadataFile FileName="InterfaceArticulacao.wsdl" MetadataType="Wsdl" ID="79f1d9ea-5145-41db-a217-f02b5437f12f" SourceId="1" SourceUrl="http://localhost:59582/InterfaceArticulacao.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
